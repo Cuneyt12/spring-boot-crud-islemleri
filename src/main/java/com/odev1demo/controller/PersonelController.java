@@ -45,11 +45,11 @@ public class PersonelController {
 
     @GetMapping("/getInfoByName/{isim}")
     public ResponseEntity<List<Personel>> getPersonelByName(@PathVariable String isim) {
-        return ResponseEntity.ok(iPersonelService.findByAd(isim));
+        return ResponseEntity.ok(iPersonelService.findPersonelByAd(isim));
     }
 
     @GetMapping("/getInfoBySurname/{soyad}")
     public ResponseEntity<List<Personel>> getPersonelBySurname(@PathVariable String soyad) {
-        return ResponseEntity.ok(iPersonelService.findBySoyad(soyad));
+        return ResponseEntity.ok(iPersonelService.findPersonelBySoyad(soyad));
     }
 }

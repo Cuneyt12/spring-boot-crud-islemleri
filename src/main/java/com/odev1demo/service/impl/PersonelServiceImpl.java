@@ -43,12 +43,12 @@ public class PersonelServiceImpl implements IPersonelService {
     }
 
     @Override
-    public List<Personel> findByAd(String isim) {
-        return iPersonelRepository.findByAd(isim);
+    public List<Personel> findPersonelByAd(String isim) {
+        return iPersonelRepository.findPersonelByAd(isim);
     }
 
     @Override
-    public List<Personel> findBySoyad(String soyad) {
-        return iPersonelRepository.findBySoyad(soyad);
+    public List<Personel> findPersonelBySoyad(String soyad) {
+        return iPersonelRepository.findPersonelBySoyad(soyad);
     }
 }

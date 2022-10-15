@@ -12,6 +12,6 @@ public interface IPersonelService {
     Personel addPersonelWithId(Personel personel);
     String deletePersonelById(Long id);
     Personel updatePersonelById(Personel personel);
-    List<Personel> findByAd(String isim);
-    List<Personel> findBySoyad(String soyad);
+    List<Personel> findPersonelByAd(String isim);
+    List<Personel> findPersonelBySoyad(String soyad);
 }
