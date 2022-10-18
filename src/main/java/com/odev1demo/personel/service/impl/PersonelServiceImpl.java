@@ -1,8 +1,8 @@
-package com.odev1demo.service.impl;
+package com.odev1demo.personel.service.impl;
 
-import com.odev1demo.repository.IPersonelRepository;
-import com.odev1demo.entity.Personel;
-import com.odev1demo.service.IPersonelService;
+import com.odev1demo.personel.repository.IPersonelRepository;
+import com.odev1demo.personel.entity.Personel;
+import com.odev1demo.personel.service.IPersonelService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +17,7 @@ public class PersonelServiceImpl implements IPersonelService {
     }
 
     @Override
-    public Personel getPersonelById(Long id) {
+    public Personel getPersonelById(Integer id) {
         return  iPersonelRepository.findById(id).orElseThrow();
     }
 
@@ -32,7 +32,7 @@ public class PersonelServiceImpl implements IPersonelService {
     }
 
     @Override
-    public String deletePersonelById(Long id) {
+    public String deletePersonelById(Integer id) {
          iPersonelRepository.deleteById(id);
          return "Silindi";
     }

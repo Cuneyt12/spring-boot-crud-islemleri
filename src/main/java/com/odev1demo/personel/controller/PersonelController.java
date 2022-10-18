@@ -1,7 +1,7 @@
-package com.odev1demo.controller;
+package com.odev1demo.personel.controller;
 
-import com.odev1demo.entity.Personel;
-import com.odev1demo.service.IPersonelService;
+import com.odev1demo.personel.entity.Personel;
+import com.odev1demo.personel.service.IPersonelService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +19,7 @@ public class PersonelController {
     }
 
     @GetMapping("/bilgi/{id}")
-    public ResponseEntity<Personel> getInfoById(@PathVariable Long id) {
+    public ResponseEntity<Personel> getInfoById(@PathVariable Integer id) {
         return ResponseEntity.ok(iPersonelService.getPersonelById(id));
     }
 
@@ -34,7 +34,7 @@ public class PersonelController {
     }
 
     @DeleteMapping("/sil/{id}")
-    public ResponseEntity<String> deletePersonelById(@PathVariable Long id) {
+    public ResponseEntity<String> deletePersonelById(@PathVariable Integer id) {
         return ResponseEntity.ok(iPersonelService.deletePersonelById(id));
     }
 
