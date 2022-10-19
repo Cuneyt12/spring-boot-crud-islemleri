@@ -20,8 +20,10 @@ public class Departman {
     @Column(name = "departmanSefi")
     private String departmanSefi;
     @OneToMany(
-            cascade = CascadeType.ALL
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
     )
     @JoinColumn(name = "departman_id", referencedColumnName = "dep")
     private List<Personel> personel;
 }
+
