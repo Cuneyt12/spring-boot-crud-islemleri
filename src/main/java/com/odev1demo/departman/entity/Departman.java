@@ -1,38 +1,27 @@
 package com.odev1demo.departman.entity;
 
 import com.odev1demo.personel.entity.Personel;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
-
 @Entity
 @Data
 @Table(name = "departman")
-@NoArgsConstructor
 public class Departman {
+
     @Id
+    @Column(name = "dep")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "departman")
-    private List<Personel> emails;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public List<Personel> getEmails() {
-        return emails;
-    }
-
-    public void setEmails(List<Personel> emails) {
-        this.emails = emails;
-    }
+    private int id;
+    @Column(name = "departmanAdi")
+    private String departmanAdi;
+    @Column(name = "departmanSefi")
+    private String departmanSefi;
+    @OneToMany(
+            cascade = CascadeType.ALL
+    )
+    @JoinColumn(name = "departman_id", referencedColumnName = "dep")
+    private List<Personel> personel;
 }
