@@ -23,7 +23,15 @@ public class Departman {
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
-    @JoinColumn(name = "departman_id", referencedColumnName = "dep")
+    @JoinTable(name = "personel_departman",
+            joinColumns = @JoinColumn(name = "departman_id"),
+                inverseJoinColumns = @JoinColumn(name = "personel_id")
+    )
     private List<Personel> personel;
+    //@JoinColumn(name = "departman_id", referencedColumnName = "dep")
+
+
+
+    //join table
 }
 

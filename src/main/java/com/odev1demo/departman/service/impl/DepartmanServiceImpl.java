@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @Data
 
@@ -23,4 +25,10 @@ public class DepartmanServiceImpl implements IDepartmanService {
     public Departman addDepartman(Departman departman) {
         return iDepartmanRepository.save(departman);
     }
+
+    @Override
+    public List<Departman> getDepartman() {
+        return iDepartmanRepository.findAll();
+    }
+
 }
