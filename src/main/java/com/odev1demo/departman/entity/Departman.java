@@ -15,8 +15,24 @@ import java.util.List;
 public class Departman {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "departmanId")
-    private int departmanId;
-    private String departmanAdi;
-    private String departmanSorumlusu;
+    private Long id;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "departman")
+    private List<Personel> emails;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<Personel> getEmails() {
+        return emails;
+    }
+
+    public void setEmails(List<Personel> emails) {
+        this.emails = emails;
+    }
 }
