@@ -1,5 +1,6 @@
 package com.odev1demo.personel.service.impl;
 
+import com.odev1demo.exception.NotFoundException;
 import com.odev1demo.personel.repository.IPersonelRepository;
 import com.odev1demo.personel.entity.Personel;
 import com.odev1demo.personel.service.IPersonelService;
@@ -18,7 +19,7 @@ public class PersonelServiceImpl implements IPersonelService {
 
     @Override
     public Personel getPersonelById(Integer id) {
-        return  iPersonelRepository.findById(id).orElseThrow();
+        return  iPersonelRepository.findById(id).orElseThrow(() -> new NotFoundException("Hataaaa!!!"));
     }
 
     @Override

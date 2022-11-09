@@ -7,13 +7,14 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Table(name = "departman")
 public class Departman {
 
     @Id
-    @Column(name = "dep")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
     @Column(name = "departmanAdi")
     private String departmanAdi;
@@ -25,13 +26,7 @@ public class Departman {
     )
     @JoinTable(name = "personel_departman",
             joinColumns = @JoinColumn(name = "departman_id"),
-                inverseJoinColumns = @JoinColumn(name = "personel_id")
+            inverseJoinColumns = @JoinColumn(name = "personel_id")
     )
     private List<Personel> personel;
-    //@JoinColumn(name = "departman_id", referencedColumnName = "dep")
-
-
-
-    //join table
 }
-
